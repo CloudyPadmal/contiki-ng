@@ -1,0 +1,14 @@
+CONTIKI_PROJECT = transceiver
+
+MODULES_REL += $(CONTIKI)/os/net/mac/nullmac/
+
+PLATFORMS_ONLY = cc26x0-cc13x0
+
+all: $(CONTIKI_PROJECT)
+
+MAKE_MAC = MAKE_MAC_NULLNET
+MAKE_NET = MAKE_NET_NULLNET
+MAKE_ROUTING = MAKE_ROUTING_NULLROUTING
+
+CONTIKI = ../../..
+include $(CONTIKI)/Makefile.include
